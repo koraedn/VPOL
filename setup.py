@@ -18,7 +18,7 @@ def installvpol():
 
     print("VPOL installed successfully!")
 
-def associateVirtual Processing Operating Language Files():
+def associatevpolfiles():
     if sys.platform != "win32":
         print("File association is only supported on Windows.")
         return
@@ -48,9 +48,9 @@ def associateVirtual Processing Operating Language Files():
                     with winreg.CreateKey(editVpolKey, "command") as editVpolCommandKey:
                         winreg.SetValue(editVpolCommandKey, "", winreg.REG_SZ, f'"{sys.executable}" "{vpolEditorScript}" "%1"')
 
-        print("VPOL file created successfully!")
+        print("VPOL file association created successfully!")
     except Exception as e:
-        print(f"Error creating file: {e}")
+        print(f"Error creating file association: {e}")
 
 def main():
     setup(
@@ -76,13 +76,13 @@ def main():
     )
 
     installvpol()
-    associateVirtual Processing Operating Language Files()
+    associatevpolfiles()
 
     vpolVersion = "1.0"
     with open(os.path.join(sys.prefix, "Scripts", "vpol_version.bat"), "w") as f:
         f.write(f'@echo VPOL version {vpolVersion}')
 
-    print("VPOL setup completed.")
+    print("VPOL setup completed successfully!")
 
 if __name__ == "__main__":
     main()
