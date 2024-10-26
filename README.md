@@ -21,6 +21,9 @@ pip install colorama scapy requests
 ```
 
 Then run the setup.py as admin to add VPOL to path (allowing you to use vpol.py ANYWHERE)
+```python
+python setup.py install
+```
 
 ## Getting Started
 
