@@ -77,7 +77,7 @@ else:
 Functions are defined using the `${functionName}` syntax and can be called with `~$functionName`.
 
 ```plaintext
-${myFunction}
+${myFunction
     terminal.print("Inside my function")
 }
 
